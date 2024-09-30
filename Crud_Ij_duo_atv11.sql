@@ -11,12 +11,3 @@ titulo varchar (50),
 dono varchar(50),
 foreign key (dono) references usuario(nome)
 );
-
-
-CREATE TABLE usuario_notas (
-    usuario_id INT,
-    nota_id INT,
-    PRIMARY KEY (usuario_id, nota_id),
-    FOREIGN KEY (usuario_id) REFERENCES usuario(id),
-    FOREIGN KEY (nota_id) REFERENCES notas(id)
-);
