@@ -14,6 +14,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
+$sql = "SELECT * FROM usuario ";
+
+$result = $conn -> query($sql);
+
+if ($result -> num_rows > 0){
+    echo "<table border='1'>
+        <tr>
+            <th> ID </th>
+            <th> Nome </th>
+            <th> Email </th>
+        </tr>";
+        while($row = $result -> fetch_assoc()){
+            echo "<tr>
+                    <td> {$row['id']} </td>
+                    <td> {$row['nome']} </td>
+                    <td> {$row['email']} </td>
+                    <td>
+                        <a href='update.php?id={$row['id']}'>Editar</a> |
+                        <a href='delete.php?id={$row['id']}'>Excluir</a>
+                    </td>
+                </tr>";
+        }
+    echo "</table>";
+}else{
+    echo "Nenhum usuario encontrada.";
+}
 $conn->close();
 ?>
 <html lang="en">
@@ -32,5 +58,5 @@ $conn->close();
         <input  type="submit" value="Adicionar"> 
 
     </form> 
-    <a href="read.php">Ver registros.</a>
+    <a href="read.php">Ver registros de notas.</a>
 </body>

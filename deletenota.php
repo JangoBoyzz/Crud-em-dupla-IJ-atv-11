@@ -1,10 +1,10 @@
 <?php
 include 'db.php';
 $id = $_GET['id'];
-    $sql = "DELETE FROM usuario WHERE id = $id";
+    $sql = "DELETE FROM notas WHERE id = $id";
 
     if ($conn -> query($sql) === TRUE) {
-        echo "Usuario deletado com sucesso";
+        echo "Nota deletado com sucesso";
     } else {
         echo "Erro: " . $sql . "<br>" . $conn->error;
     }
@@ -22,6 +22,6 @@ $id = $_GET['id'];
 <body>
     <br>
     <br>
-    <a href="create.php">Ver registros de usuarios.</a>
+    <a href="read.php">Ver registros.</a>
 </body>
 </html>

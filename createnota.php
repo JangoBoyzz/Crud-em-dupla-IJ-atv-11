@@ -27,10 +27,10 @@ $conn->close();
     <form method="POST" action="createnota.php">
         <label for="titulo">Título da nota: </label>
         <input type="text" name="titulo" require>
-        <label for="nota">Nota:: </label>
+        <label for="nota">Nota: </label>
         <input type="text" name="nota" require>
         <input  type="submit" value="Adicionar"> 
 
     </form> 
-    <a href="read.php">Ver registros.</a>
+    <a href="read.php">Ver registros de notas.</a>
 </body>
